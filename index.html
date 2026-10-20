@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asma-ul-Husna — The Beautiful Names of Allah</title>
+  <meta name="description" content="Browse the 99 Beautiful Names of Allah with Arabic, transliteration, English and Urdu meanings.">
+  <meta name="theme-color" content="#040806">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <h1 class="title-ar" lang="ar" dir="rtl">أسماء الله الحسنى</h1>
+      <p class="title-en">The Beautiful Names of Allah</p>
+    </header>
+
+    <section class="finder" aria-label="Search and favorites">
+      <div class="search-row">
+        <label class="sr-only" for="search">Search names in Arabic, English or Urdu</label>
+        <input id="search" type="search" placeholder="Search: Arabic, English or اردو" autocomplete="off" aria-controls="results">
+        <button id="favToggle" class="btn btn-small" type="button" aria-expanded="false" aria-controls="results">
+          Favorites <span id="favCount" class="count">0</span>
+        </button>
+      </div>
+      <div id="results" class="results" hidden>
+        <p id="resultsHead" class="results-head" aria-live="polite"></p>
+        <ul id="resultsList" class="results-list"></ul>
+      </div>
+    </section>
+
+    <article class="card" id="card" aria-live="polite">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+
+      <div class="card-top">
+        <span class="badge" id="badge">14</span>
+        <button id="favBtn" class="fav" type="button" aria-pressed="false" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.7 4.5 6.4 4.5c2.1 0 3.8 1.2 5.6 3.3 1.8-2.1 3.5-3.3 5.6-3.3 3.7 0 5.5 3.9 4 7.2C19.5 16.4 12 21 12 21z"/></svg>
+        </button>
+      </div>
+
+      <div class="swap" id="swap">
+        <h2 class="name-ar" id="nameAr" lang="ar" dir="rtl"></h2>
+        <div class="rule" aria-hidden="true"></div>
+
+        <dl class="facts">
+          <div class="fact">
+            <dt>Transliteration <span class="hint">(how it sounds)</span></dt>
+            <dd class="translit" id="translit"></dd>
+          </div>
+          <div class="fact">
+            <dt>Meaning in English</dt>
+            <dd class="meaning" id="meaningEn"></dd>
+          </div>
+          <div class="fact">
+            <dt lang="ur" dir="rtl">اردو مفہوم</dt>
+            <dd class="meaning-ur" id="meaningUr" lang="ur" dir="rtl"></dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+
+    <section class="progress" aria-label="Progress">
+      <p class="count-text"><span id="posText">14 / 99</span></p>
+      <div class="bar" id="bar" role="progressbar" aria-valuemin="1" aria-valuemax="99" aria-valuenow="14" aria-label="Name progress">
+        <div class="bar-fill" id="barFill"></div>
+      </div>
+    </section>
+
+    <nav class="controls" aria-label="Navigate names">
+      <button id="prev" class="btn" type="button" aria-label="Previous name">&#8592; Previous</button>
+      <form id="jumpForm" class="jump" novalidate>
+        <label class="sr-only" for="jumpInput">Jump to name number, 1 to 99</label>
+        <input id="jumpInput" type="number" inputmode="numeric" min="1" max="99" placeholder="1–99">
+        <button class="btn btn-small" type="submit" aria-label="Go to this name number">Go to</button>
+      </form>
+      <button id="next" class="btn" type="button" aria-label="Next name">Next &#8594;</button>
+    </nav>
+    <p id="jumpMsg" class="jump-msg" role="status" aria-live="polite"></p>
+
+    <footer class="foot">
+      <p>Arabic names are shown without diacritics. Transliteration shows pronunciation; the English and Urdu lines give the meaning. Lists of the 99 Names differ slightly between scholars, and no translation can fully capture a Divine Name.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
